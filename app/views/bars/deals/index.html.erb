@@ -1,0 +1,27 @@
+<h1>Listing Deals</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tier</th>
+    <th>Tipping point</th>
+    <th>Day of week</th>
+    <th></th>
+  </tr>
+
+<% @bar_deals.each do |bar_deal| %>
+  <tr>
+    <td><%= bar_deal.deal.name %></td>
+    <td><%= bar_deal.deal.tier %></td>
+    <td><%= bar_deal.deal.tipping_points %></td>
+    <td><%= bar_deal.deal.day_of_week %></td>
+    <td><%= link_to 'Show', bars_deal_path(bar_deal.deal) %> |
+    <%= link_to 'Edit', edit_bars_deal_path(bar_deal.deal) %> |
+    <%= link_to 'Destroy', bars_deal_path(bar_deal.deal), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deal', new_bars_deal_path %>

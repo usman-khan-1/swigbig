@@ -1,0 +1,7 @@
+<%= render 'form', :url => bars_rewards_path, :object => @reward, :method => :post %>
+
+<div style="">
+  <h3>New Reward From Default Rewards</h3>
+  <%= render 'form_reward_list', :url => create_from_default_reward_bars_reward_path(current_bar.id), :object => @bar_reward, :method => :post %>
+  <%= link_to 'Back', bars_rewards_path %>
+</div>
