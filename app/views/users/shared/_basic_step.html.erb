@@ -7,3 +7,18 @@
 
 <div>
   <%= f.password_field :password_confirmation, :class=>"text", :placeholder => "Re-type", :style=>"width: 225px;" %></div>
+<div>
+  <%= f.text_field :name, :class=>"text", :placeholder => "Name", :style=>"width: 225px;" %></div>
+<div>Date of birth</div>
+<div>
+  <%= f.date_select :dob, :class=>"text",
+    :start_year => Time.now.year - 100,
+    :end_year => Time.now.year, :order => [:day,:month,:year], :style=>"width: 225px;" %></div>
+<div>
+  <%= check_box_tag 'accept',:style=>"width: 225px;"  %> I agree to swigBIG.com’s Terms of Service) before registration is complete</div>
+
+<script type="text/javascript">
+  $("#accept").click(function() {
+    if($("#accept").is(':checked')){$("#submit").attr("disabled", false);}
+  })
+</script>
